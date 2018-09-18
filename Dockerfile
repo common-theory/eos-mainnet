@@ -5,5 +5,6 @@ RUN mkdir /data
 
 COPY ./config.ini /config.ini
 COPY ./genesis.json /genesis.json
+COPY ./entrypoint.sh /entrypoint.sh
 
-CMD ["nodeos", "--config", "/config.ini", "--data-dir", "/data", "--genesis-json", "/genesis.json"]
+ENTRYPOINT ["/entrypoint.sh"]
